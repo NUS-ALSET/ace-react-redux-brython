@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="https://fb.me/react-15.1.0.js"></script>
+  <script src="https://fb.me/react-dom-15.1.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.0.4/redux.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.0.0/react-redux.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-ace/5.4.0/react-ace.js"></script>
+  <script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.9/ace.js" ></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/doc_brython.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="css/console.css">
+
+  <script type="text/javascript" src="src/brython_builtins.js"></script>
+  <script type="text/javascript" src="src/version_info.js"></script>
+  <script type="text/javascript" src="src/py2js.js"></script>
+  <script type="text/javascript" src="src/py_object.js"></script>
+  <script type="text/javascript" src="src/py_type.js"></script>
+  <script type="text/javascript" src="src/py_utils.js"></script>
+  <script type="text/javascript" src="src/py_sort.js"></script>
+  <script type="text/javascript" src="src/py_builtin_functions.js"></script>
+  <script type="text/javascript" src="src/py_exceptions.js"></script>
+  <script type="text/javascript" src="src/py_range_slice.js"></script>
+  <script type="text/javascript" src="src/py_bytes.js"></script>
+  <script type="text/javascript" src="src/py_set.js"></script>
+  <script type="text/javascript" src="src/js_objects.js"></script>
+  <script type="text/javascript" src="src/stdlib_paths.js"></script>
+  <script type="text/javascript" src="src/py_import.js"></script>
+
+  <script type="text/javascript" src="src/unicode.min.js"></script>
+  <script type="text/javascript" src="src/py_string.js"></script>
+  <script type="text/javascript" src="src/py_int.js"></script>
+  <script type="text/javascript" src="src/py_long_int.js"></script>
+  <script type="text/javascript" src="src/py_float.js"></script>
+  <script type="text/javascript" src="src/py_complex.js"></script>
+  <script type="text/javascript" src="src/py_dict.js"></script>
+  <script type="text/javascript" src="src/py_list.js"></script>
+  <script type="text/javascript" src="src/py_generator.js"></script>
+  <script type="text/javascript" src="src/py_dom.js"></script>
+
+  <script type="text/javascript" src="src/builtin_modules.js"></script>
+  <script type="text/javascript" src="src/py_import_hooks.js"></script>
+
+  <script type="text/javascript" src="src/brython_stdlib.js"></script>
+  <script src="ace/mode-python3.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace/snippets/python.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/python3" id="tests_editor">
+      from browser import document as doc, window
+      from browser import html
+      import  editor21
+
+      doc['run2'].bind('click',editor21.run)
+
+  </script>
+
+  <script>
+      function run_js(){
+          var cons = document.getElementById("console");
+          var jscode = cons.value;
+          var t0 = (new Date()).getTime();
+          eval(jscode);
+          var t1 = (new Date()).getTime();
+          console.log("Javascript code run in "+(t1-t0)+" ms")
+      }
+  </script>
+  </head>
+<body onload="brython({debug:1})">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Python Run</a>
+        </div> <div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-8"><h4>Output Console</h4> </div>
+                <div class="col-lg-4 text-right"><button id="run2" class="btn btn-success">Run</button></div>
+            </div>
+            <div style="width:100%; height: 340px;">
+            <textarea id="console" autocomplete="off" style="height: 100%"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12" id="root">
+                    loading...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <script src="./jsbin.xavicow.js"></script>
+</body>
+</html>
